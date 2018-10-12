@@ -1,0 +1,20 @@
+{
+  "name": "good_fresh_every_day",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" :"gulp",
+    "mock":"json-server ./src/lib/mock/mock.js -r ./src/lib/mock/routes.json",
+    "start":"concurrently"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "yarn": "^1.10.1"
+  }
+}
