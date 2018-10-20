@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/javascripts/handlebars-v4.0.12.js"></script>
+    <script src="./lib/javascripts/zepto.min.js"></script>
+    <script >
+        $('#btn').tap(function(){
+            news_detail_controller.render();
+            document.querySelector('#root').innerHTML=news_detail_template;
+
+} )
+    </script>
+
+</head>
+<style>
+    body{
+        padding:.5rem;
+    }
+    #search_word{
+        height:1.2rem;
+        width:15.5rem;
+        margin-left:.5rem;
+    }
+    #btn{
+        font-size:.875rem;
+        color:#fff;
+        background:#ccc;
+    }
+</style>
+<body>
+    <input id="search_word" type="text" name="" >  
+    <input id="btn" type="button" value="搜索">
+</body>
+
+</html>

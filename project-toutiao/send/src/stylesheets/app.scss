@@ -1,0 +1,17 @@
+@import './modules/home';
+@import './modules/login';
+body{
+    margin:0px;
+    padding:0px;
+}
+body a{
+
+    color:#fff;
+    text-decoration: none;
+    
+}
+
+@keyframes update{
+    from { transform: rotate(0deg);}
+    to {transform : rotate(360deg);}
+}

@@ -1,0 +1,108 @@
+.header {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.t1 {
+    width: 4rem;
+    height: 1.5rem;
+    font-size: 1.2rem;
+    color: #999999;
+    margin-left:2rem;
+    float: left;
+}
+
+.t2 {
+    width: 15rem;
+    height: 1.5rem;
+
+    float: left;
+}
+
+.t3 {
+    width: 4rem;
+    height: 1.5rem;
+    font-size: 1.2rem;
+    color: #999999;
+    margin-left:2rem;
+    float: left;
+
+}
+
+.t4 {
+    width: 10rem;
+    height: 1.5rem;
+
+    float: left;
+
+}
+
+.t5 {
+    float: left;
+}
+
+.t6 {
+    font-size: 0.6rem;
+    float: left;
+    margin-top: 0.5rem;
+}
+
+.radio1 {
+    width: 8px;
+    height: 8px;
+    float: left;
+    border: 1px solid black;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    margin-left:2rem;
+}
+
+.login {
+    width: 20rem;
+    height: 2.5rem;
+    text-align: center;
+    background: rgba(248, 89, 89, .5);
+    color: white;
+    border: 1px solid #f85959;
+    border-radius: 0.16rem;
+    line-height: 2rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.img1 {
+    width: 2.5rem;
+    height: 2.5rem;
+    float: left;
+    background: url(https://s3.pstatp.com/toutiao/resource/ntoutiao_web/static/image/login/svg/icon_phone_pc_9326f65.svg);
+    overflow:hidden;
+    border-radius:50%;
+    border:1px solid #fff;
+    margin-left:5rem;
+    margin-top:2rem;
+}
+
+.img2 {
+    width: 2.5rem;
+    height: 2.5rem;
+    float: left;
+    overflow:hidden;
+    border-radius:50%;
+    background:url(https://s3a.pstatp.com/toutiao/resource/ntoutiao_web/static/image/login/svg/icon_qq_pc_5baa07b.svg);
+    border:1px solid #fff;
+    margin-left:3rem;
+    margin-top:2rem;
+}
+
+.img3 {
+    width: 2.5rem;
+    height: 2.5rem;
+    float: left;
+    overflow:hidden;
+    border-radius:50%;
+    background: url(https://s3b.pstatp.com/toutiao/resource/ntoutiao_web/static/image/login/svg/icon_weixin_pc_6251f7a.svg);
+    border:1px solid #fff;
+    margin-left:3rem;
+    margin-top:2rem;
+}

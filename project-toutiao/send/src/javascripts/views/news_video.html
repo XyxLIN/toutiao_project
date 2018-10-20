@@ -1,0 +1,16 @@
+<!-- {{#each data}} -->
+<div class="home_news_content">
+        <span class="home_news_title">
+            {{this.title}}
+        </span>
+        <div class="home_news_video_image">
+            <video src="{{this.lage_image_url}}" controllers="controllers"> </video>
+        </div>
+        <div class="home_news_footer">
+            <span>{{this.label}}</span>
+            <span>{{this.source}}</span>
+            <span>评论{{comment_count}}</span>
+            <span>{{this.datetime}}</span>
+        </div>
+    </div>
+    <!-- {{/each}} -->

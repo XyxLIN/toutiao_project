@@ -1,0 +1,7 @@
+{
+    "/api/news/list": "/list",
+    "/api/news/list_time": "/list",
+    "/api/news_hot/list_hot": "/hot",
+    "/api/news_hot/detail": "/detail"
+
+}
