@@ -1,8 +1,12 @@
 import news_hot_template from '../views/news_hot.html';
 import news_hot_model from '../models/home_news_model';
+import home_news_update from '../views/home_news_update.html';
 
 let datasources=[];
 const render =async () =>{
+    let _template1 = Handlebars.compile(home_news_update);
+    let html=_template1();
+    $('.wrapper main').html(html);
     let _hot_data= await news_hot_model.hot_news_list();
     datasources=_hot_data;
     let  _template=Handlebars.compile(news_hot_template);

@@ -1,23 +1,39 @@
 <div>
 
-        <div class="scroll-info--top scroll-info go-refresh">
-            <i class="iconfont icon-arrowsdown"></i>
-            <i class="iconfont icon-loading"></i>
-            <span class="scroll-info__title"></span>
-        </div>
-    
-        <div class="constom-info">
-            <span class="constom-info__text"></span>
-            <span class="constom-info__btn--login"></span>
-        </div>
-    
-        <div class="job-content"></div>
-    
-        <div class="scroll-info--bottom scroll-info">
-            <i class="iconfont icon-loading"></i>
-            <span class="scroll-info__title">上拉加载更多</span>
-        </div>
-    
-    
-    
+
+    <div class="scroll-info--top scroll-info go-refresh">
+        <i class="icon iconfont icon-Updatereset"></i>
+        <i class="iconfont icon-loading"></i>
+        <span class="scroll-info__title">往下刷新</span>
     </div>
+
+    <div class="constom-info">
+        <span class="constom-info__text"></span>
+        <span class="constom-info__btn--login"></span>
+    </div>
+
+    <div class="news-content">
+        <div class="home_news_content">
+            <span class="home_news_title">
+                {{this.title}}
+            </span>
+            <div class="home_news_image">
+                <img src="{{this.image_url}}"></div>
+            <div class="home_news_footer">
+                <span>{{this.label}}</span>
+                <span>{{this.source}}</span>
+                <span>评论{{comment_count}}</span>
+                <span>{{this.datetime}}</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="scroll-info--bottom scroll-info">
+        <i class="icon iconfont icon-Updatereset"></i>
+        <span class="scroll-info__title">上拉加载更多</span>
+    </div>
+
+
+
+</div>

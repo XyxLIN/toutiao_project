@@ -24,7 +24,7 @@
     text-align:center;
 }
 .icon-Updatereset{
-   
+   transform: rotate(360deg)
 }
 .header_item_search{
     margin-left:.1.25rem;
@@ -61,7 +61,7 @@
     height:.875rem ;
     font-size:.5rem;
     display:inline-block;   
-    margin-left:-1.5rem;
+    margin-left:-.5rem;
 }
 
 .active{
@@ -90,6 +90,7 @@
     left:0;
     float:left;
     display:block;
+    font-size: .3rem;
 }
 .home_news_content{
     // width:9rem;

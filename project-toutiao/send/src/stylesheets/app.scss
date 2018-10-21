@@ -8,10 +8,58 @@ body a{
 
     color:#fff;
     text-decoration: none;
-    
+    height:100%;
 }
 
-@keyframes update{
+@keyframes loading{
     from { transform: rotate(0deg);}
     to {transform : rotate(360deg);}
 }
+
+
+// 下拉去刷新  放手就刷新 正在加载。。
+
+.scroll-info {
+    height: 1.066667rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f7f7f7;
+}
+
+.scroll-info--top.go-refresh {
+    .icon-arrowsdown { 
+        display: block;
+    }
+    .icon-loading { 
+        display: none;
+    }
+}
+
+
+.scroll-info--top.release-refresh {
+    .icon-arrowsdown { 
+        display: block;
+        transform: rotate(180deg);
+    }
+    .icon-loading { 
+        display: none;
+    }
+}
+
+.scroll-info--top.loading {
+    .icon-arrowsdown { 
+        display: none;
+    }
+   
+}
+
+
+.scroll-info--bottom {
+    .icon-loading { display: none; }
+}
+
+.scroll-info--bottom.loading {
+    .icon-loading { display: block; }
+}
+
