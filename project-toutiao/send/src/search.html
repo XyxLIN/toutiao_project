@@ -16,6 +16,7 @@
     </script>
 
 </head>
+<script src="./lib/javascripts/zepto.min.js"></script>
 <style>
     body{
         padding:.5rem;
@@ -38,5 +39,10 @@
 
 </html>
 <script>
-    
+    window.onload=function(){
+        $('#btn').tap(function(){
+            window.location.href='index.html';
+        })
+    }
+     
 </script>

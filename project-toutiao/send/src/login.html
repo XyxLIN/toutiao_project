@@ -21,8 +21,9 @@
         height: 1.5rem;
         font-size: 1.2rem;
         color: #999999;
-        margin-left:2rem;
+        margin-left:4rem;
         float: left;
+        margin-top:2rem;
     }
 
     .t2 {
@@ -37,15 +38,14 @@
         height: 1.5rem;
         font-size: 1.2rem;
         color: #999999;
-        margin-left:2rem;
+        margin-left:4rem;
         float: left;
-
+        /* margin-top:2rem; */
     }
 
     .t4 {
         width: 10rem;
         height: 1.5rem;
-
         float: left;
 
     }
@@ -57,21 +57,22 @@
     .t6 {
         font-size: 0.6rem;
         float: left;
-        margin-top: 0.5rem;
+        margin-top: 1.5rem;
+        margin-left:4rem;
     }
 
     .radio1 {
         width: 8px;
         height: 8px;
         float: left;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         margin-right: 1rem;
-        margin-top: 0.5rem;
-        margin-left:2rem;
+        margin-top: 1.8rem;
+        margin-left:3.5rem;
     }
 
     .login {
-        width: 20rem;
+        width: 18rem;
         height: 2.5rem;
         text-align: center;
         background: rgba(248, 89, 89, .5);
@@ -80,7 +81,7 @@
         border-radius: 0.16rem;
         line-height: 2rem;
         margin-top: 1rem;
-        margin-left: 2rem;
+        margin-left: 2.8rem;
     }
 
     .img1 {
@@ -130,9 +131,11 @@
         margin:auto;
 
     }
-    input{
+    #text{
         border:1px solid #ccc;
         border-radius: .5rem;
+        padding:.3rem;
+        width:11rem;
     }
 
    a{
@@ -146,19 +149,22 @@
     <div class="header">登录头条推荐更精准</div>
     <div class="news_login">
         <div class="t1">手机号
-            <input type="tel" id="tel">
+            <input id="text" type="tel" id="tel">
         </div>
         <div class="t2"></div>
         <div style="clear:both"></div>
         <div class="t3">验证码
-            <input type="text" id="text">
+            <input id="text" type="text" id="text">
         </div>
 
         <div class="t4"></div>
-        <div class="t5">发送验证码</div>
+        <!-- <div class="t5">发送验证码</div> -->
         <div style="clear:both"></div>
-        <div class="radio1"></div>
-        <div class="t6">一个月内免登陆（请勿在公共网络下勾选此项）</div>
+        <!-- <div class="radio1"> -->
+            
+        <!-- </div> -->
+        <div class="t6">
+        <input type="checkbox">一个月内免登陆（请勿在公共网络下勾选此项）</div>
         <div style="clear:both"></div>
         <div class="login">登录</div>
         <div class="img1"></div>
@@ -173,9 +179,15 @@
 <script>
     window.onload=function(){
         let reg=/^[1][3,4,5,7,8][0-9]{9}$/;  
-        if(!reg.test($('#id').val())&& $('#text').val()!=''){
+        $('.login').tap(function(){
+            if(!reg.test($('#id').val())&& $('#text').val()!=''){
             window.location.href='index.html';
         }
+        else {
+           alert("请输入正确的手机号码或验证码")
+        }
+        })
+       
     }
 
        

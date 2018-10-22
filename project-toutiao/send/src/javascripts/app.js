@@ -17,7 +17,7 @@ home_news_controller. render();
 
 home_news_model.hot_news_list();
 
-entertainment_controller .render();
+entertainment_controller.render();
 
 training_controller.render();
 

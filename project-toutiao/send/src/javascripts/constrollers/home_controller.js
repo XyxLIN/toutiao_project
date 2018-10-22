@@ -14,6 +14,15 @@ const render = () =>{
         $('.home_news_update').addClass('home_news_block').removeClass('home_news_update')
     })
 
+    $('.news-content').tap( async function(){    
+        let _detail_data= await news_detail_model.detail_news_list();
+        datasources=_detail_data;
+        let _template=Handlebars.compile(news_detail_template);
+        let _html=_template(datasources);
+        console.log(_html)
+        $('main').html(_html); 
+    })
+
 }
 
 const refresh = async () => {
