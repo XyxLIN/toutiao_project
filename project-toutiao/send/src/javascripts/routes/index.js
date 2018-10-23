@@ -22,7 +22,6 @@ class Router {
         if ( !location.hash ){
             location.hash = this.initial
         };
-        // this.currentUrl = location.hash;
     }
 
     switch(path){

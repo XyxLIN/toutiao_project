@@ -9,14 +9,6 @@ const render=() =>{
     let _template1= Handlebars.compile(home_news_update);
     let html=_template1();
     $('.wrapper main').html(html);
-    $('.news-content').tap( async function(){
-        console.log(111)    
-        let _detail_data= await news_detail_model.detail_news_list();
-        datasources=_detail_data;
-        let _template=Handlebars.compile(news_detail_template);
-        let _html=_template(datasources);
-        $('main').html(_html); 
-    })
     
 }
 

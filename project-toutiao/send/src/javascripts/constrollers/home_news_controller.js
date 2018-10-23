@@ -6,12 +6,9 @@ import news_detail_template from '../views/news_detail.html'
 import news_detail_controller from './news_detail_controller';
 import home_news_model from '../models/home_news_model';
 import home_news_update from '../views/home_news_update.html';
-
 import Bscroll from 'better-scroll';
 
 let datasources = [];
-
-
 const render = async() => {
     // let _hot_data= await home_news_model.hot_news_list(); 
     // datasources= _hot_data;
@@ -35,19 +32,7 @@ const render = async() => {
         $(e.target).addClass('active').parent().siblings().children().removeClass('active');
     })
 
-
-
-    // 刷新
-
-    $('.icon-Updatereset').tap(async function () {
-        routes.switch('#/recomment')  
-        await refresh()
-    })
-
-    $('.home_news_content').tap(function () {
-        news_detail_controller.render();
-        document.querySelector("#root").innerHTML = news_detail_template;
-    })
+   
 
     handleContentScroll();
 }
@@ -60,7 +45,16 @@ const getNewsList = async () => {
     let _template = Handlebars.compile(home_template);
     let _html = _template(datasources);
     $('.wrapper main .news-content').html(_html);
-    // renderNewsList();
+    refreshNewsList ();
+    $('.home_news_content').tap( async function(){ 
+        console.log(111)  
+        let _detail_data= await  home_news_model.detail_news_list();
+        datasources=_detail_data;
+        let _template=Handlebars.compile(news_detail_template);
+        let _html=_template(datasources);
+        $('main').html(_html); 
+    })
+    
 }
 
 const getList = async() =>{
@@ -110,7 +104,7 @@ const handleContentScroll = async () => {
         x,
         y
     }) => {
-        if (y > -30 && y < 0) { // 没有完全拉出刷新元素
+        if (y > -45 && y < 0) { // 没有完全拉出刷新元素
             // 塞回去
             _news_scroll.scrollTo(0, -45, 300)
         } else if (y === 0) { // 说明该获取数据去了
@@ -139,6 +133,7 @@ const handleContentScroll = async () => {
             _o_scroll_info_bottom_title.html('上拉去加载')
             _o_scroll_info_bottom.removeClass('loading')
             _news_scroll.refresh();
+
           
         }
     })
@@ -146,32 +141,28 @@ const handleContentScroll = async () => {
 }
 
 const refreshNewsList = async () => {
-    let _news_data = await home_news_model.news_list();
-    let data = [ ..._news_data, ...datasources ];
-    console.log(data);
     // let _template = await Handlebars.compile(home_controller);
+    let _news_data = await home_news_model.news_list();
+    let data = [ _news_data, datasources ];
+    console.log(data);
+  
     // let _html = _template({
     //     _news_list: datasources
     // });
-    $('.wrapper main .news-content').html(_html)
+    // $('.wrapper main .news-content').html(_html)
     // renderNewsList();
 }
 
 
+// const refresh = async () => {
 
-const renderNewsList = () => {
-    
-}
+//     let _news_hot_data = await home_news_model.hot_news_list();
+//     let _template = Handlebars.compile(news_hot_template);
+//     let _html = _template(_news_hot_data);
+//     document.querySelector('#root').innerHTML = [home_template, _html];
+//     $('#home_news_update').addClass('home_news_block').removeClass('home_news_update');
 
-const refresh = async () => {
-
-    let _news_hot_data = await home_news_model.hot_news_list();
-    let _template = Handlebars.compile(news_hot_template);
-    let _html = _template(_news_hot_data);
-    document.querySelector('#root').innerHTML = [home_template, _html];
-    $('#home_news_update').addClass('home_news_block').removeClass('home_news_update');
-
-}
+// }
 
 
 render();

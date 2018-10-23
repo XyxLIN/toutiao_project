@@ -6,6 +6,8 @@ const sass   = require('gulp-sass');
 const webpack = require('webpack-stream');
 const watch = require('gulp-watch');
 const del = require('del');
+const rev=require('gulp-rev')
+
 // 全局的配置
 const { dev_config } = require('./src/config/index.js');
 
@@ -32,7 +34,6 @@ gulp.task('copy:html', () => {
 
 // 处理scss
 gulp.task('compile:scss', () => {
-    console.log('handle scss')
     return gulp.src('./src/stylesheets/**/*.scss')
             .pipe(sass(sass_config).on('error', sass.logError))
             .pipe(gulp.dest('./dev/stylesheets'));
@@ -41,6 +42,7 @@ gulp.task('compile:scss', () => {
 // 模块化打包js
 gulp.task('compile:js', () => {
     return gulp.src('./src/javascripts/**/*.js')
+        .pipe(rev())
         .pipe(webpack(webpack_config))
         .pipe(gulp.dest('./dev/javascripts'))
 })
